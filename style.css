@@ -73,7 +73,8 @@ body {
 	border-radius: 5px;
 	cursor: pointer;
 	justify-content: center;
-	transition: border-radius 0.3s;
+	transform: scale(1);
+	transition: all 0.2s;
 }
 
 .dark {
@@ -85,9 +86,9 @@ body {
 }
 
 .key.active {
-	border-radius: 20px;
+	border-radius: 25px;
 	background: rgb(11, 1, 97);
-	transition: background 0.2s ease-in-out;
+	color: yellow;
 }
 .key2 {
 	flex-grow: 1;
