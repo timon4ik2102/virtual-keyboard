@@ -5,7 +5,7 @@ document.body.append(wrapper)
 const paragraph = document.createElement('p');
 wrapper.append(paragraph);
 paragraph.classList = 'text-paragraph';
-paragraph.innerText = 'Change language - Shift/Alt'
+paragraph.innerText = 'Change language:  Ctrl + Alt'
 
 const textarea = document.createElement('textarea');
 textarea.classList = 'textarea';
@@ -71,18 +71,22 @@ const shiftBtn = document.getElementById('16');
 
 
 
+
 const psysicalKeyPressAnimation = () => {
     document.addEventListener('keydown',(event) => {
         textarea.focus();
+
         elements.forEach(elem => {
             if ((elem.id == event.keyCode)) {
+
                 if (elem === capsLockBtn) {
                     elem.classList.toggle('active');
-                }
-                else {
+                } else {
                     elem.classList.add('active');
                 }
+
             }
+
         })
 
     });
@@ -173,6 +177,7 @@ inputTextByClicks();
 psysicalKeyPressAnimation();
 
 
+
 // BACK
 const backspaceButtonPressed = (str,startIndex,endIndex) => {
     let result = '';
@@ -205,6 +210,9 @@ const tabButtonPressed = () => {
 
 
 // CAPS
+
+
+
 function CapsLock() {
     keysArray.forEach((rowEl) => {
         rowEl.forEach(keyEl => {
@@ -235,7 +243,6 @@ function CapsLock() {
 
 
 
-// DOOG
 const runOnKeys = (func,...keys) => {
     let pressed = new Set();
 
@@ -246,24 +253,27 @@ const runOnKeys = (func,...keys) => {
                 return;
             }
         }
+
         pressed.clear();
         func();
     });
 
     document.addEventListener('keyup',(e) => {
+
         pressed.delete(e.key);
     });
 }
 
-runOnKeys(() => ChangeLang(),"Alt","Shift");
+runOnKeys(() => ChangeLang(),"Alt","Control");
 runOnKeys(() => CapsLock(),"CapsLock");
 runOnKeys(() => tabButtonPressed(),"Tab");
+runOnKeys(() => CapsLock(),"Shift");
 
 
 
 
 
-// ДУМАЙ
+
 function ChangeLang() {
     keysArray.forEach((rowEl) => {
         rowEl.forEach(keyEl => {
