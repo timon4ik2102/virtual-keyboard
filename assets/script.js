@@ -155,6 +155,15 @@ const inputTextByClicks = () => {
         textarea.focus()
     })
 
+    document.addEventListener('mouseout',(event) => {
+        if (event.target.tagName !== 'SPAN') return
+        let target = event.target;
+        if (target != capsLockBtn && target != shiftBtn) {
+            target.classList.remove('active');
+        }
+        textarea.focus()
+    })
+
 
 }
 
