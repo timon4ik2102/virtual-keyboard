@@ -168,7 +168,8 @@ const deleteTextButtonPressed = (str, startIndex, endIndex) => {
   return result;
 };
 
-const tabButtonPressed = (event) => {
+const tabButtonPressed = () => {
+  // eslint-disable-next-line no-restricted-globals
   event.preventDefault();
   textarea.value += "\t";
 };
@@ -215,7 +216,6 @@ const runOnKeys = (func, ...keys) => {
       }
     }
     /* eslint-enable */
-
     pressed.clear();
     func();
   });
