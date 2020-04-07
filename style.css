@@ -90,9 +90,11 @@ body {
 	background: rgb(11, 1, 97);
 	color: yellow;
 }
+
 .key2 {
 	flex-grow: 1;
 }
+
 .key7 {
 	flex-grow: 6;
 }
