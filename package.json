@@ -15,12 +15,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timon4ik2102/virtual-keyboard.git"
+    "url": ""
   },
   "author": "Roman Tymchenko",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/timon4ik2102/virtual-keyboard/issues"
-  },
-  "homepage": "https://github.com/timon4ik2102/virtual-keyboard#readme"
+  "homepage": ""
 }
