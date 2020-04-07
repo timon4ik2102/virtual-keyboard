@@ -1,0 +1,98 @@
+@font-face {
+	font-family: 'Baloo Thambi';
+	font-style: normal;
+	font-weight: 700;
+	src: url('./assets/fonts/Baloo_Thambi_2/BalooThambi2-Bold.ttf') format('trutype');
+}
+
+@font-face {
+	font-family: 'Baloo Thambi';
+	font-style: normal;
+	font-weight: 500;
+	src: url('./assets/fonts/Baloo_Thambi_2/BalooThambi2-Medium.ttf') format('trutype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(192, 191, 191);
+	font-family: 'Baloo Thambi', serif;
+	font-weight: 700;
+	/* font-family: 'Palatino', Georgia, serif; */
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1020px;
+	height: 100px;
+}
+
+.text-paragraph {
+	display: block;
+	margin: 0 auto;
+	padding-top: 30px;
+	width: 800px;
+	color: rgb(27, 22, 22);
+	font-size: 2em;
+}
+
+.textarea {
+	display: block;
+	margin: 30px auto 20px;
+	padding: 5px;
+	width: 80%;
+	height: 200px;
+	font-size: 1.3em;
+	background: rgb(223, 224, 224);
+	font-weight: 500;
+	color: rgb(52, 52, 56);
+	border: 10px solid rgb(27, 22, 22);
+}
+.keyboard {
+	margin: 0 auto;
+	width: 870px;
+	background: #1c1d1d;
+}
+
+.row {
+	display: flex;
+}
+
+.key {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	line-height: 45px;
+	margin: 4px;
+	background: #67696b;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+	justify-content: center;
+	transform: scale(1);
+	transition: all 0.2s;
+}
+
+.dark {
+	background: #424750;
+}
+
+.key:hover {
+	background: #35383d;
+}
+
+.key.active {
+	border-radius: 25px;
+	background: rgb(11, 1, 97);
+	color: yellow;
+}
+.key2 {
+	flex-grow: 1;
+}
+.key7 {
+	flex-grow: 6;
+}

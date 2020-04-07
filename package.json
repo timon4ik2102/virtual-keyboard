@@ -1,0 +1,26 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js",
+    "fix": "./node_modules/.bin/eslint  --fix **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timon4ik2102/virtual-keyboard.git"
+  },
+  "author": "Roman Tymchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timon4ik2102/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/timon4ik2102/virtual-keyboard#readme"
+}
