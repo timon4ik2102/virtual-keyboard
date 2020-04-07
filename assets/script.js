@@ -24,7 +24,7 @@ if (!localStorage.language) localStorage.language = "EN";
 const createKeyboard = () => {
   localStorage.getItem("language");
 
-  keysArray.forEach((rowEl, item) => {
+  keysArray.forEach((rowEl,item) => {
     const row = document.createElement("div");
     keyboard.append(row);
     row.className = `row row${item}`;
@@ -62,7 +62,7 @@ const shiftBtn = document.getElementById("16");
 
 
 const psysicalKeyPressAnimation = () => {
-  document.addEventListener("keydown", (event) => {
+  document.addEventListener("keydown",(event) => {
     textarea.focus();
 
     elements.forEach((elem) => {
@@ -76,7 +76,7 @@ const psysicalKeyPressAnimation = () => {
     });
   });
 
-  document.addEventListener("keyup", () => {
+  document.addEventListener("keyup",() => {
     elements.forEach((elem) => {
       if (elem != capsLockBtn) {
         elem.classList.remove("active");
@@ -87,7 +87,7 @@ const psysicalKeyPressAnimation = () => {
 
 
 const inputTextByClicks = () => {
-  document.addEventListener("mousedown", (event) => {
+  document.addEventListener("mousedown",(event) => {
     textarea.focus();
     if (event.target.tagName !== "SPAN") return;
     const { target } = event;
@@ -99,9 +99,9 @@ const inputTextByClicks = () => {
         capsLockBtn.classList.toggle("active");
         capsLockButtonPressed();
       } else if (target === backSpaceBtn) {
-        textarea.value = backspaceButtonPressed(textarea.value, textarea.selectionStart, textarea.selectionEnd);
+        textarea.value = backspaceButtonPressed(textarea.value,textarea.selectionStart,textarea.selectionEnd);
       } else if (target === deleteBtn) {
-        textarea.value = deleteTextButtonPressed(textarea.value, textarea.selectionStart, textarea.selectionEnd);
+        textarea.value = deleteTextButtonPressed(textarea.value,textarea.selectionStart,textarea.selectionEnd);
       } else if (target === enterBtn) {
         textarea.value += "\n";
       } else if (target === tabBtn) {
@@ -118,7 +118,7 @@ const inputTextByClicks = () => {
       textarea.value += char[0];
     }
   });
-  document.addEventListener("mouseup", (event) => {
+  document.addEventListener("mouseup",(event) => {
     if (event.target.tagName !== "SPAN") return;
     const { target } = event;
     if (target != capsLockBtn && target != shiftBtn) {
@@ -131,7 +131,7 @@ const inputTextByClicks = () => {
     textarea.focus();
   });
 
-  document.addEventListener("mouseout", (event) => {
+  document.addEventListener("mouseout",(event) => {
     if (event.target.tagName !== "SPAN") return;
     const { target } = event;
     if (target != capsLockBtn && target != shiftBtn) {
@@ -147,23 +147,23 @@ psysicalKeyPressAnimation();
 
 
 // BACK
-const backspaceButtonPressed = (str, startIndex, endIndex) => {
+const backspaceButtonPressed = (str,startIndex,endIndex) => {
   let result = "";
   if (startIndex === endIndex) {
-    result = str.replace(str.substr(startIndex - 1, 1), "");
+    result = str.replace(str.substr(startIndex - 1,1),"");
   } else {
-    result = str.replace(str.slice(startIndex, endIndex), "");
+    result = str.replace(str.slice(startIndex,endIndex),"");
   }
   return result;
 };
 
 // DEL
-const deleteTextButtonPressed = (str, startIndex, endIndex) => {
+const deleteTextButtonPressed = (str,startIndex,endIndex) => {
   let result = "";
   if (startIndex === endIndex) {
-    result = str.replace(str.substr(startIndex, 1), "");
+    result = str.replace(str.substr(startIndex,1),"");
   } else {
-    result = str.replace(str.slice(startIndex, endIndex), "");
+    result = str.replace(str.slice(startIndex,endIndex),"");
   }
   return result;
 };
@@ -204,10 +204,10 @@ function capsLockButtonPressed() {
 }
 
 
-const runOnKeys = (func, ...keys) => {
+const runOnKeys = (func,...keys) => {
   const pressed = new Set();
 
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown",(e) => {
     pressed.add(e.key);
     /*eslint-disable*/
     for (let key of keys) {
@@ -220,15 +220,15 @@ const runOnKeys = (func, ...keys) => {
     func();
   });
 
-  document.addEventListener("keyup", (e) => {
+  document.addEventListener("keyup",(e) => {
     pressed.delete(e.key);
   });
 };
 
-runOnKeys(() => ChangeLang(), "Alt", "Control");
-runOnKeys(() => capsLockButtonPressed(), "CapsLock");
-runOnKeys(() => tabButtonPressed(), "Tab");
-runOnKeys(() => capsLockButtonPressed(), "Shift");
+runOnKeys(() => ChangeLang(),"Alt","Control");
+runOnKeys(() => capsLockButtonPressed(),"CapsLock");
+runOnKeys(() => tabButtonPressed(),"Tab");
+
 
 
 function ChangeLang() {
@@ -258,5 +258,5 @@ function ChangeLang() {
       });
     });
   });
-  localStorage.setItem("language", lang);
+  localStorage.setItem("language",lang);
 }
