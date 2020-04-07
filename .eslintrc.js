@@ -21,7 +21,7 @@ module.exports = {
     }],
     "no-param-reassign": [2,{ "props": false }],
     "no-undef": "off",
-    eqeqeq: "off",
+    "eqeqeq": "off",
     "no-use-before-define": "off",
     "default-case": "off",
   }
